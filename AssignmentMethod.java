@@ -8,18 +8,18 @@
 import java.util.*;
 public class CheckAddition {
 
-public static boolean Checker(int[] arr,int target)
-{
-for(int i=0;i<arr.length;i++)
-{
-    for(int j=i+1;j<arr.length;j++)
-    {
-        int x=arr[i];
-        int y=arr[j];
-        if((x+y)==target)
-        return true;
-    }
-}
-return false;
-}
+public static boolean Checker(int [] ar,int target) {
+		Arrays.sort(ar);
+	    for (int i = 0, j = ar.length - 1; i < j;) {
+	        int sum = ar[i] + ar[j];
+	        if (sum < target)
+	            i++;
+	        else if (sum > target)
+	            j--;
+	        else
+	            return true;
+	    }
+	    return false;
+		
+	}
    
